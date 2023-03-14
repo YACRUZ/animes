@@ -27,3 +27,5 @@ jobs:
       run: lsb_release -a
     - name: list directory
       run: ls -la
+    - name: show python version
+      run: python --version
