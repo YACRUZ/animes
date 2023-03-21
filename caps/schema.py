@@ -64,3 +64,5 @@ class CreateCap(graphene.Mutation):
 #4
 class Mutation(graphene.ObjectType):
     create_cap = CreateCap.Field()
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
