@@ -27,7 +27,7 @@ CAPS_QUERY = '''
    }
  }
 '''
-class LinkTestCase(GraphQLTestCase):
+class CapTestCase(GraphQLTestCase):
     GRAPHQL_SCHEMA = schema
     def setUp(self):
         self.cap1 = mixer.blend(Cap)
@@ -44,3 +44,36 @@ class LinkTestCase(GraphQLTestCase):
         print ("query caps results ")
         print (content)
         assert len(content['data']['caps']) == 2
+
+    def test_createCap_mutation(self):
+
+        response = self.query(
+            CREATE_CAP_MUTATION,
+            variables={'titulo': 'pochita', 'temporada': 'verano', 'genero': 'peleas', 'capitulos': 5, 'estudio': 'Trigger',
+                       'director': 'miyazaki', 'animacion': '2d', 'formato': 'ova', 'adaptacion': 'original'}
+        )
+        print('mutation ')
+        print(response)
+        content = json.loads(response.content)
+        print(content)
+        self.assertResponseNoErrors(response)
+        self.assertDictEqual({"createCap": {'titulo': 'pochita', 'temporada': 'verano', 'genero': 'peleas', 'capitulos': 5, 'estudio': 'Trigger',
+                       'director': 'miyazaki', 'animacion': '2d', 'formato': 'ova', 'adaptacion': 'original'}}, content['data']) 
+
+CREATE_CAP_MUTATION = '''
+ mutation createCapMutation($titulo: String, $temporada: String, $genero: String, $capitulos: Int, $estudio: String, $director: String, $animacion: String, $formato: String, $adaptacion: String) {
+     createCap(titulo: $titulo, temporada: $temporada, genero: $genero, capitulos: $capitulos, estudio: $estudio, director: $director,
+     animacion: $animacion, formato: $formato, adaptacion: $adaptacion) {
+         titulo
+         temporada
+         genero
+         capitulos
+         estudio
+         director 
+         animacion
+         formato
+         adaptacion
+     }
+ }
+'''
+
