@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: yacruz-config
+ labels:
+   app: postgres
+data:
+ PROD_SECRET_KEY: yacruz
+ PROD_DATABASE: ocyllrdx
+ PROD_USER: ocyllrdx
+ PROD_PASSWORD: OHiono9-MLpEfQKk6dHl2vnvSUfPB759
+ PROD_HOST: mahmud.db.elephantsql.com
+ PROD_PORT: "5432"
