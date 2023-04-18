@@ -6,8 +6,8 @@ metadata:
    app: postgres
 data:
  PROD_SECRET_KEY: yacruz
- PROD_DATABASE: anime_prod
- PROD_USER: postgres
- PROD_PASSWORD: YAHIRJE02
- PROD_HOST: localhost
+ PROD_DATABASE: ocyllrdx
+ PROD_USER: ocyllrdx
+ PROD_PASSWORD: OHiono9-MLpEfQKk6dHl2vnvSUfPB759
+ PROD_HOST: mahmud.db.elephantsql.com
  PROD_PORT: "5432"
