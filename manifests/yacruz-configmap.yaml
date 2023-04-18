@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: yacruz-config
+ labels:
+   app: postgres
+data:
+ PROD_SECRET_KEY: yacruz
+ PROD_DATABASE: anime_prod
+ PROD_USER: postgres
+ PROD_PASSWORD: YAHIRJE02
+ PROD_HOST: localhost
+ PROD_PORT: "5432"
