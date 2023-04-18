@@ -4,6 +4,6 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /anime
 WORKDIR /anime
 COPY requirements.txt /anime/
-RUN pip install -r requirements.txt
+RUN pip install -r Requirements.txt
 COPY . /anime/
 CMD python manage.py runserver --settings=settings.production 0.0.0.0:8080
