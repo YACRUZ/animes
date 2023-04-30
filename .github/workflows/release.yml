@@ -51,7 +51,11 @@ jobs:
 #    - name: run server
 #      run: python manage.py runserver --settings=settings.local
     - name: update replicas number in k8 
-      run: sed -i 's/{nodo}/${{secrets.OKTETO_NODOS}}/g' manifests/yacruz.yml
+      run: sed -i 's/{nodo}/${{ secrets.OKTETO_NODOS}}/g' manifests/yacruz.yml
+    - name: update _ by - 
+      run: sed -i 's/_/-/g' manifests/yacruz.yml
+    - name: update sha in k8
+      run: sed -i 's/{github.sha}/${{github.sha}}/g' manifests/yacruz.yml
         
     - uses: okteto/context@2.7.0
       with:
