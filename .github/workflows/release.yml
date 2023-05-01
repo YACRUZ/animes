@@ -50,8 +50,8 @@ jobs:
       run: python manage.py test --settings=settings.testing -v 3 --keepdb
 #    - name: run server
 #      run: python manage.py runserver --settings=settings.local
-    - name: update replicas number in k8 
-      run: sed -i 's/{nodo}/${{ secrets.OKTETO_NODOS}}/g' manifests/yacruz.yml
+#    - name: update replicas number in k8 
+#      run: sed -i 's/{nodo}/${{ secrets.OKTETO_NODOS}}/g' manifests/yacruz.yml
         
     - uses: okteto/context@2.7.0
       with:
