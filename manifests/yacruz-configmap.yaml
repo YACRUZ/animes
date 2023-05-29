@@ -5,6 +5,13 @@ metadata:
  labels:
    app: postgres
 data:
+ DEV_SECRET_KEY: {DEV_SECRET_KEY}
+ DEV_DATABASE: {DEV_DATABASE}
+ DEV_USER: {DEV_USER}
+ DEV_PASSWORD: {DEV_PASSWORD}
+ DEV_HOST: {DEV_HOST}
+ DEV_PORT: {DEV_PORT}
+
  PROD_SECRET_KEY: yacruz
  PROD_DATABASE: ocyllrdx
  PROD_USER: ocyllrdx
