@@ -60,6 +60,8 @@ jobs:
       run: sed -i 's/MY_DEV_HOST/${{secrets.DEV_HOST}}/g' manifests/yacruz-configmap.yaml
     - name: update DEV_PORT
       run: sed -i 's/MY_DEV_PORT/${{secrets.DEV_PORT}}/g' manifests/yacruz-configmap.yaml
+    - name: show config
+      run: cat manifests/yacruz-configmap.yaml
 #    - name: run server
 #      run: python manage.py runserver --settings=settings.local
 #    - name: update replicas number in k8 
