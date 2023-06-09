@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
+from django.conf import settings
 
 # Create your models here.
 class Cap(models.Model):
@@ -13,3 +14,8 @@ class Cap(models.Model):
     animacion = models.CharField(default='',max_length=2, blank=False)
     formato = models.TextField(default='', blank=False)
     adaptacion = models.TextField(default='', blank=False)
+    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
+
+class Vote(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    cap = models.ForeignKey('caps.Cap', related_name='caps', on_delete=models.CASCADE)
