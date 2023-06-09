@@ -26,7 +26,9 @@ class Query(graphene.ObjectType):
                 Q(titulo__icontains=search) |
                 Q(genero__icontains=search)
             )
-        return Cap.objects.filter(filter)
+            return Cap.objects.filter(filter)
+        
+        return Cap.objects.all()
     
     def resolve_votes(self, info, **kwargs):
         return Vote.objects.all()
