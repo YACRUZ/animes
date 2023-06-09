@@ -47,7 +47,7 @@ jobs:
     - name: show .env file
       run: cat .env
     - name: run test
-      run: python manage.py test --settings=settings.production -v 3 --keepdb
+      run: python manage.py test --settings=settings.test -v 3 --keepdb
     - name: show config
       run: cat manifests/yacruz-configmap.yaml
 #    - name: run server
